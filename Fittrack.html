@@ -9,26 +9,29 @@
 
 <h1>FitTrack - Registro de Entrenamiento</h1>
 
-<label>Nombre:</label>
-<input type="text" id="nombre" placeholder="Ingrese su nombre">
+<form id="formEntrenamiento">
+  <label>Nombre:</label>
+  <input type="text" id="nombre" placeholder="Ingrese su nombre">
 
-<label>Tipo de actividad:</label>
-<select id="tipoActividad">
-  <option value="cardio">Cardio (correr, bici, etc.)</option>
-  <option value="fuerza">Fuerza (pesas)</option>
-  <option value="flexibilidad">Flexibilidad (yoga, estiramiento)</option>
-</select>
+  <label>Tipo de actividad:</label>
+  <select id="tipoActividad">
+    <option value="cardio">Cardio (correr, bici, etc.)</option>
+    <option value="fuerza">Fuerza (pesas)</option>
+    <option value="flexibilidad">Flexibilidad (yoga, estiramiento)</option>
+  </select>
 
-<label>Duración del entrenamiento (minutos):</label>
-<input type="number" id="duracion" placeholder="Ej: 45">
+  <label>Duración del entrenamiento (minutos):</label>
+  <input type="number" id="duracion" placeholder="Ej: 45">
 
-<label>Peso corporal (kg):</label>
-<input type="number" id="peso" placeholder="Ej: 70">
+  <label>Peso corporal (kg):</label>
+  <input type="number" id="peso" placeholder="Ej: 70">
 
-<label>Objetivo calórico diario (kcal):</label>
-<input type="number" id="objetivo" placeholder="Ej: 400">
+  <label>Objetivo calórico diario (kcal):</label>
+  <input type="number" id="objetivo" placeholder="Ej: 400">
 
-<button onclick="registrarEntrenamiento()">Registrar Entrenamiento</button>
+  <!-- CLASE 10: Botón de envío tipo submit dentro del formulario -->
+  <button type="submit">Registrar Entrenamiento</button>
+</form>
 
 <p id="resultado"></p>
 <!-- Contenedor para mostrar el historial (inicialmente oculto) -->
