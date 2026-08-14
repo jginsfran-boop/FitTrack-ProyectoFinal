@@ -128,3 +128,83 @@ h1 {
   font-size: 1rem;
   color: #2f855a;
 }
+
+.form-error {
+  color: #c53030;
+  background-color: #fff5f5;
+  border: 1px solid #feb2b2;
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.input-busqueda {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #cbd5e0;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+}
+
+.sin-resultados {
+  font-size: 0.85rem;
+  color: #718096;
+  font-style: italic;
+}
+
+.estadisticas-card {
+  background-color: #fffaf0;
+  border-left: 4px solid #dd6b20;
+  padding: 1.25rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  text-align: left;
+}
+
+.estadisticas-card h3 {
+  margin-top: 0;
+  color: #c05621;
+  margin-bottom: 0.75rem;
+}
+
+.estadisticas-lista {
+  list-style-type: disc;
+  padding-left: 1.25rem;
+  margin: 0 0 1rem 0;
+}
+
+.estadisticas-lista li {
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.conteo-actividades {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.badge-actividad {
+  background-color: #feebc8;
+  color: #9c4221;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.ultimos-tres {
+  border-top: 1px solid #fbd38d;
+  padding-top: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.ultimos-tres ul {
+  margin: 0.5rem 0 0 0;
+  padding-left: 1.25rem;
+}
