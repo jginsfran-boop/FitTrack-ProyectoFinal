@@ -1,3 +1,5 @@
+import { obtenerMetPorActividad } from '../utils/metasActividad';
+
 // --- CLASE 8: Programación Orientada a Objetos (POO) ---
 // --- CLASE 13: Se extrae la clase a su propio archivo para modularizar el código
 //               (mismo espíritu de "dividir la interfaz/lógica para reutilizar código") ---
@@ -19,23 +21,10 @@ class EntrenamientoModel {
   }
 
   obtenerMet() {
-    let met;
-    // --- CLASE 4: Switch ---
-    switch (this.actividad) {
-      case 'cardio':
-        met = 8;
-        break;
-      case 'fuerza':
-        met = 6;
-        break;
-      case 'flexibilidad':
-        met = 3;
-        break;
-      default:
-        met = 1;
-        break;
-    }
-    return met;
+    // --- CLASE 12: Objeto Map ---
+    // Antes esto era un switch (Clase 4); ahora se resuelve consultando el
+    // Map "metasActividad" con get()/has(), definido en utils/metasActividad.js.
+    return obtenerMetPorActividad(this.actividad);
   }
 
   calcularCalorias() {

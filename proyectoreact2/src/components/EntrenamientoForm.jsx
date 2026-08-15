@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { obtenerOpcionesActividad, obtenerTablaMet } from '../utils/metasActividad';
 
 // --- CLASE 13: Concepto de Componentes ---
 // EntrenamientoForm es un componente hijo: recibe "onRegistrar" por props,
@@ -6,6 +7,18 @@ import { useState } from 'react';
 // del formulario sin que el hijo necesite conocer el resto de la app.
 function EntrenamientoForm({ onRegistrar }) {
   const [error, setError] = useState("");
+
+  // --- CLASE 12: Hook useState ---
+  // useState devuelve un arreglo [valor, funciónParaActualizarlo] que se
+  // extrae con desestructuración de arreglos: "mostrarInfoMet" guarda el
+  // valor actual (true/false) y "setMostrarInfoMet" lo actualiza y hace que
+  // React vuelva a renderizar el componente.
+  const [mostrarInfoMet, setMostrarInfoMet] = useState(false);
+
+  // --- CLASE 12: las opciones del <select> salen del Map en vez de estar
+  //               escritas a mano en el JSX ---
+  const opcionesActividad = obtenerOpcionesActividad();
+  const tablaMet = obtenerTablaMet();
 
   const handleSubmit = (e) => {
     // --- CLASE 10: Prevenir la recarga por defecto del formulario ---
@@ -51,10 +64,30 @@ function EntrenamientoForm({ onRegistrar }) {
       <div className="form-group">
         <label htmlFor="tipoActividad">Tipo de actividad:</label>
         <select id="tipoActividad" name="tipoActividad" defaultValue="cardio">
-          <option value="cardio">Cardio (correr, bici, etc.)</option>
-          <option value="fuerza">Fuerza (pesas)</option>
-          <option value="flexibilidad">Flexibilidad (yoga, estiramiento)</option>
+          {/* --- CLASE 12: map() + desestructuración para generar las <option> desde el Map --- */}
+          {opcionesActividad.map(({ valor, etiqueta }) => (
+            <option key={valor} value={valor}>{etiqueta}</option>
+          ))}
         </select>
+
+        <button
+          type="button"
+          className="btn-info-met"
+          // --- CLASE 12: la función de actualización de useState puede recibir
+          //               el valor previo para invertirlo de forma segura ---
+          onClick={() => setMostrarInfoMet((valorPrevio) => !valorPrevio)}
+        >
+          {/* --- CLASE 12: Template String para armar el texto del botón dinámicamente --- */}
+          {`${mostrarInfoMet ? "Ocultar" : "Ver"} tabla de intensidad (MET)`}
+        </button>
+
+        {mostrarInfoMet && (
+          <ul className="tabla-met">
+            {tablaMet.map((fila) => (
+              <li key={fila}>{fila}</li>
+            ))}
+          </ul>
+        )}
       </div>
 
       <div className="form-group">

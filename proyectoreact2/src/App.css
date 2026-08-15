@@ -208,3 +208,89 @@ h1 {
   margin: 0.5rem 0 0 0;
   padding-left: 1.25rem;
 }
+
+.subtitulo {
+  color: #4a5568;
+  font-size: 0.9rem;
+  margin-top: -0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.btn-info-met {
+  margin-top: 0.5rem;
+  background: none;
+  border: 1px solid #3182ce;
+  color: #3182ce;
+  border-radius: 6px;
+  padding: 0.35rem 0.7rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.btn-info-met:hover {
+  background-color: #ebf8ff;
+}
+
+.tabla-met {
+  margin-top: 0.5rem;
+  padding-left: 1.25rem;
+  font-size: 0.8rem;
+  color: #2d3748;
+  background-color: #ebf8ff;
+  border-radius: 6px;
+  padding: 0.5rem 1.25rem;
+}
+
+.participantes-card {
+  background-color: #f0fff4;
+  border-left: 4px solid #38a169;
+  padding: 1.25rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  text-align: left;
+}
+
+.participantes-card h3 {
+  margin-top: 0;
+  color: #276749;
+  margin-bottom: 0.75rem;
+}
+
+.participantes-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+
+.participantes-card li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid #c6f6d5;
+  font-size: 0.9rem;
+}
+
+.btn-quitar {
+  background: none;
+  border: 1px solid #e53e3e;
+  color: #e53e3e;
+  border-radius: 6px;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.btn-limpiar {
+  background-color: #38a169;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.btn-limpiar:hover {
+  background-color: #276749;
+}
