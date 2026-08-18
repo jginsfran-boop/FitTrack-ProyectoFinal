@@ -294,3 +294,95 @@ h1 {
 .btn-limpiar:hover {
   background-color: #276749;
 }
+
+.peso-form {
+  margin-top: 1.5rem;
+}
+
+.btn-peso {
+  background-color: #6b46c1;
+}
+
+.btn-peso:hover {
+  background-color: #553c9a;
+}
+
+.peso-card {
+  background-color: #faf5ff;
+  border-left: 4px solid #6b46c1;
+  padding: 1.25rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  text-align: left;
+}
+
+.peso-card h3 {
+  margin-top: 0;
+  color: #553c9a;
+  margin-bottom: 0.5rem;
+}
+
+.peso-actual {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.grafico-peso {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.75rem;
+  height: 140px;
+  padding: 0 0.5rem;
+  margin-bottom: 1rem;
+  overflow-x: auto;
+}
+
+.barra-peso-contenedor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+  min-width: 40px;
+}
+
+.barra-peso {
+  width: 24px;
+  min-height: 4px;
+  background-color: #9f7aea;
+  border-radius: 4px 4px 0 0;
+  transition: height 0.2s ease;
+}
+
+.barra-peso-valor {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #553c9a;
+  margin-top: 0.35rem;
+}
+
+.barra-peso-fecha {
+  font-size: 0.65rem;
+  color: #718096;
+  white-space: nowrap;
+}
+
+.peso-variacion {
+  font-size: 0.9rem;
+  color: #4a5568;
+  margin-bottom: 1rem;
+}
+
+.btn-deshacer {
+  background: none;
+  border: 1px solid #6b46c1;
+  color: #6b46c1;
+  border-radius: 6px;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.btn-deshacer:hover {
+  background-color: #e9d8fd;
+}

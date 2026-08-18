@@ -6,6 +6,9 @@ import ResultadoCard from './components/ResultadoCard';
 import EstadisticasCard from './components/EstadisticasCard';
 import ParticipantesCard from './components/ParticipantesCard';
 import HistorialList from './components/HistorialList';
+import RegistroPesoForm from './components/RegistroPesoForm';
+import PesoChart from './components/PesoChart';
+import { quitarUltimoRegistroPeso } from './utils/pesoUtils';
 
 // --- CLASE 13: App es el componente PADRE. Guarda el estado y se lo pasa
 //               a cada componente hijo mediante props. ---
@@ -20,6 +23,9 @@ function App() {
   // Guardamos un Map<nombreUsuario, cantidadDeEntrenamientos>. Al ser estado
   // de React, cada actualización debe crear un Map NUEVO (no mutar el actual).
   const [mapaUsuarios, setMapaUsuarios] = useState(new Map());
+
+  // Historial de peso corporal: cada registro es { fecha, pesoKg }
+  const [historialPeso, setHistorialPeso] = useState([]);
 
   // --- CLASE 13: función que el padre le pasa por props al hijo EntrenamientoForm
   //               para que el hijo pueda "avisarle" al padre cuando hay un registro nuevo ---
@@ -61,6 +67,21 @@ function App() {
     });
   };
 
+  // Agrega un nuevo registro de peso al final del historial (estado inmutable)
+  const registrarPeso = (pesoKg) => {
+    const nuevoRegistro = {
+      fecha: new Date().toLocaleDateString(),
+      pesoKg,
+    };
+
+    setHistorialPeso((prevHistorialPeso) => [...prevHistorialPeso, nuevoRegistro]);
+  };
+
+  // Quita el último registro de peso cargado
+  const deshacerUltimoPeso = () => {
+    setHistorialPeso((prevHistorialPeso) => quitarUltimoRegistroPeso(prevHistorialPeso));
+  };
+
   return (
     <>
       <div className="fit-container">
@@ -88,6 +109,10 @@ function App() {
         />
 
         <HistorialList historial={historial} />
+
+        <RegistroPesoForm onRegistrar={registrarPeso} />
+
+        <PesoChart historialPeso={historialPeso} onDeshacer={deshacerUltimoPeso} />
       </div>
     </>
   );
