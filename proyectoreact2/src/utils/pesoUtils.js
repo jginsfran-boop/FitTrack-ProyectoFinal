@@ -25,6 +25,7 @@ export function generarPorcentajesPeso(historialPeso) {
   if (historialPeso.length === 0) return [];
 
   const pesos = historialPeso.map((registro) => registro.pesoKg);
+  // --- CLASE 14: Operador Spread (...) para descomponer el arreglo y pasarlo como argumentos ---
   const minimo = Math.min(...pesos);
   const maximo = Math.max(...pesos);
 
@@ -35,7 +36,7 @@ export function generarPorcentajesPeso(historialPeso) {
   return pesos.map((valor) => Math.round(((valor - minimo) / (maximo - minimo)) * 100));
 }
 
-// Quita el último registro cargado (equivalente inmutable de un pop())
+// --- CLASE 14: Equivalente inmutable del método pop() para quitar el último registro ---
 export function quitarUltimoRegistroPeso(historialPeso) {
   return historialPeso.slice(0, -1);
 }

@@ -27,7 +27,7 @@ function App() {
   // Historial de peso corporal: cada registro es { fecha, pesoKg }
   const [historialPeso, setHistorialPeso] = useState([]);
 
-  // --- CLASE 13: función que el padre le pasa por props al hijo EntrenamientoForm
+  // --- CLASE 14: función que el padre le pasa por props al hijo EntrenamientoForm
   //               para que el hijo pueda "avisarle" al padre cuando hay un registro nuevo ---
   const registrarEntrenamiento = (datos) => {
     // --- CLASE 12: Desestructuración de objeto para extraer cada campo del formulario ---
@@ -36,6 +36,7 @@ function App() {
     // --- CLASE 8: Instanciación del modelo POO ---
     const nuevoEntrenamiento = new EntrenamientoModel(nombre, actividad, duracion, peso, objetivo);
 
+    // --- CLASE 14: Operador Spread (...) para agregar elementos a un arreglo de forma inmutable ---
     setHistorial((prevHistorial) => [...prevHistorial, nuevoEntrenamiento]);
     setUltimoResultado(nuevoEntrenamiento);
 
@@ -74,6 +75,7 @@ function App() {
       pesoKg,
     };
 
+    // --- CLASE 14: Operador Spread (...) para agregar un registro inmutablemente ---
     setHistorialPeso((prevHistorialPeso) => [...prevHistorialPeso, nuevoRegistro]);
   };
 
@@ -92,7 +94,7 @@ function App() {
           {`Llevas ${historial.length} entrenamiento(s) registrado(s) de ${mapaUsuarios.size} participante(s).`}
         </p>
 
-        {/* --- CLASE 13: Componente + props: App (padre) -> EntrenamientoForm (hijo) --- */}
+        {/* --- CLASE 14: Componentes: eventos generados por una componente (padre -> hijo) --- */}
         <EntrenamientoForm onRegistrar={registrarEntrenamiento} />
 
         {/* --- CLASE 13: props con un objeto completo (no solo tipos primitivos) --- */}
@@ -102,6 +104,7 @@ function App() {
         <EstadisticasCard historial={historial} />
 
         {/* --- CLASE 12: props con un Map completo --- */}
+        {/* --- CLASE 14: Pasando referencias a funciones como eventos (props) --- */}
         <ParticipantesCard
           mapaUsuarios={mapaUsuarios}
           onEliminar={eliminarParticipante}
