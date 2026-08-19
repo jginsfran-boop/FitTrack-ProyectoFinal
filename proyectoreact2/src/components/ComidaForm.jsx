@@ -53,7 +53,7 @@ function ComidaForm({ onRegistrar }) {
     <form onSubmit={handleSubmit} className="fit-form comida-form">
       <div className="form-group">
         <label htmlFor="nombreComida">Alimento:</label>
-        <input type="text" id="nombreComida" name="nombre" placeholder="Ej: Pechuga de pollo" required />
+        <input type="text" id="nombreComida" name="nombre" placeholder="Ej: Pechuga de pollo, ensalada de lechuga con pasta, etc..." required />
       </div>
 
       <div className="form-group">
