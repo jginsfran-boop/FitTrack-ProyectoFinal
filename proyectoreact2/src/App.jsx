@@ -9,6 +9,8 @@ import HistorialList from './components/HistorialList';
 import RegistroPesoForm from './components/RegistroPesoForm';
 import PesoChart from './components/PesoChart';
 import { quitarUltimoRegistroPeso } from './utils/pesoUtils';
+import ComidaForm from './components/ComidaForm';
+import ComidasCard from './components/ComidasCard';
 
 // --- CLASE 13: App es el componente PADRE. Guarda el estado y se lo pasa
 //               a cada componente hijo mediante props. ---
@@ -26,6 +28,8 @@ function App() {
 
   // Historial de peso corporal: cada registro es { fecha, pesoKg }
   const [historialPeso, setHistorialPeso] = useState([]);
+  // Historial de comidas: cada registro es { nombre, proteinas, carbohidratos, grasas, fibra, calorias, fecha }
+  const [historialComidas, setHistorialComidas] = useState([]);
 
   // --- CLASE 14: función que el padre le pasa por props al hijo EntrenamientoForm
   //               para que el hijo pueda "avisarle" al padre cuando hay un registro nuevo ---
@@ -83,6 +87,10 @@ function App() {
   const deshacerUltimoPeso = () => {
     setHistorialPeso((prevHistorialPeso) => quitarUltimoRegistroPeso(prevHistorialPeso));
   };
+  // Agrega un nuevo registro de comida al final del historial (estado inmutable)
+const registrarComida = (nuevaComida) => {
+  setHistorialComidas((prevHistorialComidas) => [...prevHistorialComidas, nuevaComida]);
+};
 
   return (
     <>
@@ -116,6 +124,8 @@ function App() {
         <RegistroPesoForm onRegistrar={registrarPeso} />
 
         <PesoChart historialPeso={historialPeso} onDeshacer={deshacerUltimoPeso} />
+        <ComidaForm onRegistrar={registrarComida} />
+        <ComidasCard historialComidas={historialComidas} />
       </div>
     </>
   );
