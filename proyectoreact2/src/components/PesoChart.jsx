@@ -7,7 +7,7 @@ function PesoChart({ historialPeso, onDeshacer }) {
   const porcentajes = generarPorcentajesPeso(historialPeso);
   const variacion = calcularVariacionPeso(historialPeso);
   const ultimo = obtenerUltimoPeso(historialPeso);
-
+//clase 3, condicionales
   let mensajeVariacion;
   if (historialPeso.length < 2) {
     mensajeVariacion = "Registrá al menos dos días para ver la variación.";
